@@ -16,5 +16,33 @@
             </ul>
         </nav>
     </header>
+
+    <div>
+        <formclass="formulario" name="formulario" autocomplete="on" method="POST"> <!--agregar el siguiente atributo action="validar.js" -->
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" placeholder="Ingrese su nombre completo" required autofocus><br>
+        <label for="nombre">Correo electronico:</label>
+        <input type="email" name="correo" placeholder="Ingrese su correo electronico" required autofocus><br>
+        <label for="mensaje">Escriba su mensaje</label><br>
+        <label for="nombre">Telefono:</label>
+        <input type="number" name="telefono" placeholder="Ingrese su nro de telefono" required autofocus><br>
+        <textarea type="text" name="mensaje" id="mensaje"></textarea><br><br>
+
+        <input type="submit" id="btEnviar" value="Enviar" onclick="validar();">
+
+        </form>
+    </div>
+
+    <script>
+        function validar(){
+            
+            //validando campo nombre y apellido
+            var nombre = document.formulario.nombre.value.trim();
+            if(!nombre || nombre.length < 7){
+                alert("Debe ingresar un nombre y apellido.");
+                return false;
+            }
+        }
+    </script>
 </body>
 </html>
