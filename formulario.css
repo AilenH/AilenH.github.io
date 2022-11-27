@@ -1,0 +1,31 @@
+*{
+    display: 0;
+    padding: 0%;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+body{
+    background-color: aquamarine;
+    
+}
+.menu{
+    display: flex;
+}
+
+.menu>li{
+    padding: 16px;
+}
+
+.formuArea{
+display: flex;
+width: 500px;
+margin: auto;
+border: 5px solid blueviolet;
+
+}
+
+
+.formulario>label{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}

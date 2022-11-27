@@ -1,48 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <nav>
-            <ul class="menu">
-                <li><a href="https://ailenh.github.io">Inicio</a></li>
-                <li><a href="https://ailenh.github.io/jazz">Jazz</a></li>
-                <li><a href="https://ailenh.github.io/formulario">Promociona tu acamedia</a></li>
-            </ul>
-        </nav>
-    </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./formulario.css">
 
-    <div>
-        <formclass="formulario" name="formulario" autocomplete="on" method="POST"> <!--agregar el siguiente atributo action="validar.js" -->
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" placeholder="Ingrese su nombre completo" required autofocus><br>
-        <label for="nombre">Correo electronico:</label>
-        <input type="email" name="correo" placeholder="Ingrese su correo electronico" required autofocus><br>
-        <label for="mensaje">Escriba su mensaje</label><br>
-        <label for="nombre">Telefono:</label>
-        <input type="number" name="telefono" placeholder="Ingrese su nro de telefono" required autofocus><br>
-        <textarea type="text" name="mensaje" id="mensaje"></textarea><br><br>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <a href="./index.html">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="./jazz.html">Jazz</a>
+                    </li>
+                    <li>
+                        <a href="./formulario.html">Promociona tu acamedia</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-        <input type="submit" id="btEnviar" value="Enviar" onclick="validar();">
+        <div>
+            <p></p>
+        </div>
 
-        </form>
-    </div>
+        <div class="formuArea">
+            <form
+                class="formulario" name="formulario" autocomplete="on" method="POST">
+                <!--agregar el siguiente atributo action="validar.js" -->
+                <label for="nombre">Nombre:</label>
+                <input id="nombre" type="text" name="nombre" placeholder="Ingrese su nombre completo" required autofocus><br>
+                <label for="correo">Correo electronico:</label>
+                <input id="correo" type="email" name="correo" placeholder="Ingrese su correo electronico" required autofocus><br>
+                <label for="mensaje">Escriba su mensaje</label><br>
+                <textarea id="mensaje" type="text" name="mensaje" id="mensaje"></textarea><br><br>
+                <label for="nombre">Telefono:</label>
+                <input id="telefono" type="number" name="telefono" placeholder="Ingrese su nro de telefono" required autofocus><br>
 
-    <script>
-        function validar(){
-            
-            //validando campo nombre y apellido
-            var nombre = document.formulario.nombre.value.trim();
-            if(!nombre || nombre.length < 7){
-                alert("Debe ingresar un nombre y apellido.");
-                return false;
+                <input type="submit" id="btEnviar" value="Enviar" onclick="validar(event)">
+
+            </form>
+        </div>
+
+        <div class="datosRecibidos">
+            <h1>
+                La informacion ingresada es:</h1>
+            <table>
+
+                <tr>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Mensaje</th>
+                    <th>Telefono</th>
+                </tr>
+
+                <tr>
+                    <td id="nombreVer"></td>
+                    <td id="correoVer"></td>
+                    <td id="msjVer"></td>
+                    <td id="telVer"></td>
+                </tr>
+            </table>
+        </div>
+
+        <script>
+            function validar(evento) {
+                evento.preventDefault()
+                // validando campo nombre
+                var nombre = document.querySelector("#nombre").value;
+                alert(nombre);
+                if (! nombre || nombre.length < 4) {
+                    alert("Debe ingresar un nombre");
+                    return false;
+                }
+
+                // validando campo email
+                var mail = document.querySelector("#correo").value;
+                const validarEmail = (email) => {
+                    return String(email).toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+                };
+                if (mail.length < 8 || ! validarEmail(mail)) {
+                    alert("Debe ingresar un correo válido");
+                    return false;
+                }
+
+                var mensaje = document.querySelector("#mensaje").value;
+                if (mensaje.length < 15) {
+                    alert("Debe ingresar un mensaje mas largo")
+
+                } else if (mensaje.length > 120) {
+                    alert("Debe ingresar un mensaje mas corto")
+                }
+
+                var nrotel = document.querySelector("#telefono").value;
+                alert(nrotel)
+                if (nrotel.length < 8 || isNaN(parseInt(nrotel))) {
+                    alert("Debe ingresar un numero de telefono valido sin 0 ni 15")
+                }
+
+                var nombreVer = document.querySelector("#nombreVer");
+                nombreVer.innerHTML=nombre;
+
+                var correoVer = document.querySelector("#correoVer");
+                correoVer.innerHTML = mail;
+
+                var msjVer = document.querySelector("#msjVer");
+                msjVer.innerHTML=mensaje;
+
+                var telVer = document.querySelector("#telVer");
+                telVer.innerHTML=nrotel;
+
+
             }
-        }
-    </script>
-</body>
+
+
+        </script>
+    </body>
 </html>

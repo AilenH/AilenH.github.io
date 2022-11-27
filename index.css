@@ -14,3 +14,9 @@ body{
 .menu>li{
     padding: 16px;
 }
+
+div.galeria img {
+    float: left;
+    padding: 20px;
+    margin: 0 auto;
+}
