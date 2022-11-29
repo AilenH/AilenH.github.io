@@ -15,6 +15,10 @@ body{
     padding: 16px;
 }
 
+.texto{
+    text-align: justify;
+}
+
 div.galeria img {
     float: left;
     padding: 20px;
