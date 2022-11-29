@@ -25,8 +25,10 @@
                 </ul>
             </nav>
         </header>
-        <div>
-            <h1> La Danza</h1>
+        <h1> La Danza</h1>
+        <div class="contenido">
+           
+            
             <p class="texto">
                 Origen de la danza
                 Se encontraron registros pictóricos de la danza en todas las épocas y en los distintos continentes, si bien a través del curso del tiempo se fue modificando su forma, su sentido y significado.
@@ -37,16 +39,29 @@
                 
                 
                 
-                (Fuente: https://concepto.de/danza/)
+                <br>(Fuente: https://concepto.de/danza/)
 
             </p>
         </div>
 
-        <div class="galeria">
+        
+            
+        <table>
+                        
+            <td> <button id="retroceder" onclick="anterior()">Retroceder</button></td>
+            <td><div class="galeria"><img id="imagen" src="img/danzas.jpeg"></div></td>
+            <td><button id="avanzar" onclick="siguiente()">Avanzar</button></td>
+
+        </table> 
+        <!-- <div class="botonIzq">
             <button id="retroceder" onclick="anterior()">Retroceder</button>
-            <div><img id="imagen" src="img/danzas.jpeg"></div>
-            <button id="avanzar" onclick="siguiente()">Avanzar</button>
-        </div>
+        </div>    
+        <div class="galeria"><img id="imagen" src="img/danzas.jpeg"></div>
+            <div class="botonDer">
+                <button id="avanzar" onclick="siguiente()">Avanzar</button>
+            </div> 
+            -->
+        
         <script>
             const IMAGENES = ["img/danzas.jpeg", "img/danzasurbanas.jpeg", "img/Jazz1.jpeg", "img/Jazz2.jpeg"];
             let posicion = 0;

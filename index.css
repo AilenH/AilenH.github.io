@@ -19,6 +19,15 @@ body{
     text-align: justify;
 }
 
+button{
+    background-color: aqua;
+    
+    
+}
+.contenido{
+    display: flex;
+    width: 900px;
+}
 div.galeria img {
     float: left;
     padding: 20px;
