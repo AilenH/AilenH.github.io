@@ -48,10 +48,6 @@
             </form>
         </div>
 
-        <div class="datosRecibidos">
-            <h2>La informacion ingresada es:</h2>
-
-        </div>
         <ul id="listaError"></ul>
         <ol id="listaOk"></ol>
 
@@ -67,14 +63,14 @@
                 let email = document.querySelector("#correo");
                 let mensaje = document.querySelector("#mensaje");
                 let nrotel = document.querySelector("#telefono");
-                
+
                 nombre.classList.remove("error");
                 email.classList.remove("error");
                 mensaje.classList.remove("error");
                 nrotel.classList.remove("error");
 
                 // validando campo nombre
-                
+
                 if (! nombre.value || nombre.value.length < 4) {
                     console.log("Nombre invalido")
                     let item = document.createElement("li")
@@ -131,8 +127,8 @@
                 if (sinError) {
                     let item = document.createElement("li")
                     listaOk.appendChild(item);
-                    item.innerHTML = nombre.value + " <b>dice</b> " + comentario.value;
-                    mensaje.value == "";
+                    item.innerHTML = " <b>nombre:</b> " + nombre.value + " <b>Correo:</b> " + email.value + " <b>Mensaje: </b> " + mensaje.value + " <b>telefono: </b> " + nrotel.value;
+                    // en caso de que necesite vaciar seria-> mensaje.value == "";
 
                 }
                 return false;
