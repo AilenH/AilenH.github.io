@@ -42,83 +42,102 @@
                 <label for="nrotel">Telefono:</label>
                 <input id="telefono" type="tel" name="telefono" placeholder="Ingrese su nro de telefono" required autofocus><br>
 
-                <input type="submit" id="btEnviar" value="Enviar" onclick="validar(event)">
-                <!-- ver opcion <form onsubmit="return validar()"></form> -->
+                <input
+                type="submit" id="btEnviar" value="Enviar" onclick="validar(event)">
+            <!-- ver opcion <form onsubmit="return validar()"></form> -->
             </form>
         </div>
 
         <div class="datosRecibidos">
-            <h1>La informacion ingresada es:</h1>
-            <table>
+            <h2>La informacion ingresada es:</h2>
 
-                <tr>
-                    <th>Nombre</th>
-                    <th>Correo</th>
-                    <th>Mensaje</th>
-                    <th>Telefono</th>
-                </tr>
-
-                <tr>
-                    <td id="nombreVer"></td>
-                    <td id="correoVer"></td>
-                    <td id="msjVer"></td>
-                    <td id="telVer"></td>
-                </tr>
-            </table>
         </div>
+        <ul id="listaError"></ul>
+        <ol id="listaOk"></ol>
 
         <script>
             function validar(evento) {
                 evento.preventDefault()
+
+                let sinError = true;
+                let listaError = document.getElementById("listaError");
+                let listaOk = document.getElementById("listaOk");
+                listaError.innerHTML = "";
+                let nombre = document.querySelector("#nombre");
+                let email = document.querySelector("#correo");
+                let mensaje = document.querySelector("#mensaje");
+                let nrotel = document.querySelector("#telefono");
+                
+                nombre.classList.remove("error");
+                email.classList.remove("error");
+                mensaje.classList.remove("error");
+                nrotel.classList.remove("error");
+
                 // validando campo nombre
-                let nombre = document.querySelector("#nombre").value;
-                alert(nombre);
-                if (! nombre || nombre.length < 4) {
-                    alert("Debe ingresar un nombre");
-                    return false;
+                
+                if (! nombre.value || nombre.value.length < 4) {
+                    console.log("Nombre invalido")
+                    let item = document.createElement("li")
+                    listaError.appendChild(item);
+                    item.innerHTML = "Nombre invalido";
+                    email.classList.add("error");
+                    sinError = false;
                 }
 
                 // validando campo email
-                let mail = document.querySelector("#correo").value;
+
                 const validarEmail = (email) => {
-                    return String(email).toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+                    return String(email.value).toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
                 };
-                if (mail.length < 8 || ! validarEmail(mail)) {
-                    alert("Debe ingresar un correo válido");
-                    return false;
+                if (email.value.length < 4 || ! validarEmail(email)) {
+                    console.log("Debe ingresar un correo válido");
+                    let item = document.createElement("li")
+                    listaError.appendChild(item);
+                    item.innerHTML = "Debe ingresar un correo válido";
+                    email.classList.add("error");
+                    sinError = false;
+
                 }
 
-                let mensaje = document.querySelector("#mensaje").value;
-                if (mensaje.length < 15) {
-                    alert("Debe ingresar un mensaje mas largo")
 
-                } else if (mensaje.length > 120) {
-                    alert("Debe ingresar un mensaje mas corto")
+                if (mensaje.value.length < 10) {
+                    console.log("Debe ingresar un mensaje mas largo");
+                    let item = document.createElement("li")
+                    listaError.appendChild(item);
+                    item.innerHTML = "Debe ingresar un mensaje mas largo (10 caracteres min)";
+                    nombre.classList.add("error");
+                    sinError = false;
+
+                } else if (mensaje.value.length > 120) {
+
+                    console.log("Debe ingresar un mensaje mas corto");
+                    let item = document.createElement("li")
+                    listaError.appendChild(item);
+                    item.innerHTML = "Debe ingresar un mensaje mas cprto";
+                    mensaje.classList.add("error");
+                    sinError = false;
                 }
 
-                let nrotel = document.querySelector("#telefono").value;
-                alert(nrotel)
-                
-                if (nrotel.length < 8 || isNaN(parseInt(nrotel))) {
-                    alert("Debe ingresar un numero de telefono valido sin 0 ni 15")
+
+                if (nrotel.value.length < 8 || isNaN(parseInt(nrotel.value))) {
+
+                    console.log("Debe ingresar un numero de telefono valido sin 0 ni 15");
+                    let item = document.createElement("li")
+                    listaError.appendChild(item);
+                    item.innerHTML = "Debe ingresar un numero de telefono valido sin 0 ni 15";
+                    nrotel.classList.add("error");
+                    sinError = false;
                 }
+                if (sinError) {
+                    let item = document.createElement("li")
+                    listaOk.appendChild(item);
+                    item.innerHTML = nombre.value + " <b>dice</b> " + comentario.value;
+                    mensaje.value == "";
 
-                let nombreVer = document.querySelector("#nombreVer");
-                nombreVer.innerHTML=nombre;
-
-                let correoVer = document.querySelector("#correoVer");
-                correoVer.innerHTML = mail;
-
-                let msjVer = document.querySelector("#msjVer");
-                msjVer.innerHTML=mensaje;
-
-                let telVer = document.querySelector("#telVer");
-                telVer.innerHTML=nrotel;
-
+                }
+                return false;
 
             }
-
-
         </script>
     </body>
 </html>
