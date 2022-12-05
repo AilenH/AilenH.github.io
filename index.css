@@ -4,12 +4,18 @@
     box-sizing: border-box;
     list-style-type: none;
 }
+
+
 body{
     background-color: aquamarine;
 }
 .menu{
     display: flex;
+    border: 3px solid black;
 }
+/* .menu>li{
+    
+} */
 
 .menu>li{
     padding: 16px;

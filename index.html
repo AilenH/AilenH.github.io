@@ -9,7 +9,7 @@
 
     </head>
     <body>
-        
+
         <header>
             <nav>
                 <ul class="menu">
@@ -24,46 +24,60 @@
                     </li>
                 </ul>
             </nav>
+
         </header>
-        <h1> La Danza</h1>
-        <div class="contenido">
-           
-            
-            <p class="texto">
-                Origen de la danza
-                Se encontraron registros pictóricos de la danza en todas las épocas y en los distintos continentes, si bien a través del curso del tiempo se fue modificando su forma, su sentido y significado.
-                
-                En la prehistoria se bailaba al compás de los sonidos de la naturaleza, que más tarde fueron acompañados por las palmas, el choque de los pies o de bastones, que luego se vieron evolucionados en instrumentos musicales. Por último, se incorporó la voz. Estas danzas primitivas eran pasionales y espontáneas, buscaban expresar sentimientos y estados de ánimo.
-                
-                Las grandes civilizaciones de la antigüedad, como Roma, Egipto y Grecia, utilizaron la danza en rituales: defunciones, bodas, recibimientos, danzas a las divinidades, entre otros.
-                
-                
-                
-                <br>(Fuente: https://concepto.de/danza/)
+        <section>
+            <article>
+                <h1>
+                    La Danza
+                </h1>
 
-            </p>
-        </div>
 
+                <p class="texto">
+                    
+                    Origen de la danza
+                                    Se encontraron registros pictóricos de la danza en todas las épocas y en los distintos continentes, si bien a través del curso del tiempo se fue modificando su forma, su sentido y significado.
+                                    
+                                    En la prehistoria se bailaba al compás de los sonidos de la naturaleza, que más tarde fueron acompañados por las palmas, el choque de los pies o de bastones, que luego se vieron evolucionados en instrumentos musicales. Por último, se incorporó la voz. Estas danzas primitivas eran pasionales y espontáneas, buscaban expresar sentimientos y estados de ánimo.
+                                    
+                                    Las grandes civilizaciones de la antigüedad, como Roma, Egipto y Grecia, utilizaron la danza en rituales: defunciones, bodas, recibimientos, danzas a las divinidades, entre otros.
+
+
+                    <br>(Fuente: https://concepto.de/danza/)
+
+                </p>
+            </article>
+            <article>
+                <h2> Galeria </h2>
+                <table>
+
+                    <td>
+                        <button id="retroceder" onclick="anterior()">Retroceder</button>
+                    </td>
+                    <td>
+                        <div class="galeria"><img id="imagen" src="img/danzas.jpeg"></div>
+                    </td>
+                    <td>
+                        <button id="avanzar" onclick="siguiente()">Avanzar</button>
+                    </td>
         
-            
-        <table>
-                        
-            <td> <button id="retroceder" onclick="anterior()">Retroceder</button></td>
-            <td><div class="galeria"><img id="imagen" src="img/danzas.jpeg"></div></td>
-            <td><button id="avanzar" onclick="siguiente()">Avanzar</button></td>
+                </table>
+            </article>
+        </section>
 
-        </table> 
+
+      
         <!-- <div class="botonIzq">
-            <button id="retroceder" onclick="anterior()">Retroceder</button>
-        </div>    
-        <div class="galeria"><img id="imagen" src="img/danzas.jpeg"></div>
-            <div class="botonDer">
-                <button id="avanzar" onclick="siguiente()">Avanzar</button>
-            </div> 
-            -->
-        
+                    <button id="retroceder" onclick="anterior()">Retroceder</button>
+                </div>    
+                <div class="galeria"><img id="imagen" src="img/danzas.jpeg"></div>
+                    <div class="botonDer">
+                        <button id="avanzar" onclick="siguiente()">Avanzar</button>
+                    </div> 
+                    -->
+
         <script>
-            const IMAGENES = ["img/danzas.jpeg", "img/danzasurbanas.jpeg", "img/Jazz1.jpeg", "img/Jazz2.jpeg"];
+            const IMAGENES = ["img/danzas.jpeg", "img/danzasurbanas.jpeg", "img/jazz1.jpeg", "img/jazz2.jpeg"];
             let posicion = 0;
             function siguiente() {
                 if (posicion == IMAGENES.length - 1) {
@@ -86,5 +100,11 @@
                 console.log(posicion)
             }
         </script>
+        <footer>
+            <a href="mailto:ailenbustillos@hotmail.com">
+                Contáctenos
+            </a>
+            <p>Copyright 2022</p>
+        </footer>
     </body>
 </html>
