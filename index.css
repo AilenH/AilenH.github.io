@@ -12,13 +12,14 @@ body{
 .menu{
     display: flex;
     border: 3px solid black;
-}
-/* .menu>li{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
     
-} */
+}
 
 .menu>li{
-    padding: 16px;
+    padding: 20px;
+    text-decoration: none;
 }
 
 section{
@@ -35,7 +36,9 @@ article{
 }
 
 button{
-    background-color: aqua;
+    background-color: cadetblue;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: oblique;
 
     
     
