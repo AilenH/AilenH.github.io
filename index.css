@@ -7,23 +7,27 @@
 
 
 body{
-    background-color: aquamarine;
+    background-color: rgb(222, 186, 206);
 }
 .menu{
     display: flex;
-    border: 3px solid black;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 2px solid black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-style: normal;
     
+    background-color: rgb(186, 148, 209);
+    text-decoration: none;
 }
 
 .menu>li{
     padding: 20px;
     text-decoration: none;
+    color: aliceblue;
 }
 
 section{
     display: flex;
+    flex-direction: column;
 }
 
 article{
@@ -36,7 +40,7 @@ article{
 }
 
 button{
-    background-color: cadetblue;
+    background-color: rgb(186, 148, 209);
     font-family: 'Courier New', Courier, monospace;
     font-style: oblique;
 
@@ -66,4 +70,9 @@ h2{
 p.texto{
 color: black;
 
+}
+
+footer{
+    background-color: rgb(127, 102, 157);
+    margin: 30px;
 }
