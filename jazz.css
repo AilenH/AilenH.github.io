@@ -6,11 +6,16 @@
 }
 
 body{
-    background-color: aquamarine;
+    background-color: rgb(222, 186, 206);
 }
 
 .menu{
+    background-color: rgb(186, 148, 209);
     display: flex;
+    border: 2px solid black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: normal;
+    text-decoration: none;
 }
 
 .menu>li{

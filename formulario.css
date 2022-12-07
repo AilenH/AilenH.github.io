@@ -5,28 +5,89 @@
     list-style-type: none;
 }
 body{
-    background-color: aquamarine;
+    background-color: rgb(222, 186, 206);
     
 }
 .menu{
+    background-color: rgb(186, 148, 209);
     display: flex;
+    border: 2px solid black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: normal;
+    text-decoration: none;
 }
 
 .menu>li{
     padding: 16px;
 }
 
-.formuArea{
-display: flex;
-width: 500px;
-margin: auto;
-border: 5px solid blueviolet;
-
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(103, 119, 132);
+}
+h1{
+    text-align: center;
+    color:rgb(150, 62, 237)
+}
+h1:hover{
+   
+    color: #00aaff;    
 }
 
-
-.formulario>label{
+section{
+    display: flex;
+    
+}
+.formuArea{    
+    
+    justify-content: center;
+    background-color: rgb(238, 127, 143);
+    width: 400px;
+    height: 400px;
+    margin: 15px 20px 15px 40px;
+    padding: 25px;
+    border: 5px solid rgb(155, 108, 231);
+}
+label{
+    width: 100px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: bold;
+font-weight: bold;
+}
+input{
+    width: 250px;
+}
+
+select{
+    justify-content: flex-start;
+    width: 260px;
+}
+
+#enviado{
+    justify-content: baseline;
+    width: 400px;
+    height: 400px;
+    background-color: rgb(156, 196, 241);    
+    margin: auto;
+    padding: 25px;
+    border: 3px solid rgb(255, 146, 4);
+}
+button{
+    scale: 115%;
+    background-color: #cd7c39;
+    border: 5px double #68e9a2;
+    border-radius: 5px;    
+   }
+button:hover{
+    box-shadow: 0px 5px 8px -3px #000000, 2px 3px 8px 2px rgba(0,0,0,0);
+    background-color: #7dfbff;
+    scale: 100%;
+}
+button:active {
+    background-color: #fb0000;
+    scale: 65%;
+}
+.error{
+    border-color: rgb(233, 11, 11);
+    background-color: rgb(220, 233, 107);
 }
 
