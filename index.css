@@ -44,13 +44,30 @@ article{
     text-align: justify;
 }
 
+
 button{
-    background-color: rgb(186, 148, 209);
+    background-color: rgb(230, 220, 237);
     font-family: 'Courier New', Courier, monospace;
     font-style: oblique;
 
     
     
+}
+#retroceder{
+    display: flex;
+    width: 25px;
+    scale: 115%;
+    background-color: #cd7c39;
+    border: 5px double #4cf799;
+    border-radius: 5px;  
+}
+#avanzar{
+    display: flex;
+    width: 25px;
+    scale: 115%;
+    background-color: #cd7c39;
+    border: 5px double #4cf799;
+    border-radius: 5px;  
 }
 .contenido{
     display: flex;

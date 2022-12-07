@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link rel="stylesheet" href="./formulario.css">
+        <script src="https://kit.fontawesome.com/dbb61e89f7.js" crossorigin="anonymous"></script>
+
 
     </head>
     <body>
@@ -28,28 +30,46 @@
         <div>
             <p></p>
         </div>
-
+        <section>
         <div class="formuArea">
             <form
                 class="formulario" name="formulario" autocomplete="on" method="POST">
                 <!--agregar el siguiente atributo action="validar.js" -->
                 <label for="nombre">Nombre:</label>
+                <br>
                 <input id="nombre" type="text" name="nombre" placeholder="Ingrese su nombre completo" required autofocus><br>
+                
                 <label for="correo">Correo electronico:</label>
+                <br>
                 <input id="correo" type="email" name="correo" placeholder="Ingrese su correo electronico" required autofocus><br>
                 <label for="mensaje">Escriba su mensaje</label><br>
                 <textarea id="mensaje" type="text" name="mensaje" id="mensaje"></textarea><br><br>
                 <label for="nrotel">Telefono:</label>
+                <br>
                 <input id="telefono" type="tel" name="telefono" placeholder="Ingrese su nro de telefono" required autofocus><br>
-
+<br>
                 <input
                 type="submit" id="btEnviar" value="Enviar" onclick="validar(event)">
             <!-- ver opcion <form onsubmit="return validar()"></form> -->
             </form>
         </div>
-
-        <ul id="listaError"></ul>
-        <ol id="listaOk"></ol>
+        <div id="enviado">
+            <h1>Formulario dice:</h1>
+            <ul id="listaError"></ul>
+            <ol id="listaOk"></ol>
+        </div>
+        </section>
+        <footer>
+            <b>Contáctenos:</b>
+                <br>
+            <br>
+            <a href="mailto:ailenbustillos@hotmail.com"><button><i class="fa-regular fa-envelope"></i></button></a>
+            <a href="https://instagram.com" target="_blank"><button><i class="fa-brands fa-instagram"></i></button></a>
+            <a href="https://facebook.com" target="_blank"><button><i class="fa-brands fa-facebook"></i></button></a>
+            
+            <b id="copy">Copyright 2022</b>
+        </footer>
+        
 
         <script>
             function validar(evento) {
@@ -76,7 +96,7 @@
                     let item = document.createElement("li")
                     listaError.appendChild(item);
                     item.innerHTML = "Nombre invalido";
-                    email.classList.add("error");
+                    nombre.classList.add("error");
                     sinError = false;
                 }
 
@@ -101,7 +121,7 @@
                     let item = document.createElement("li")
                     listaError.appendChild(item);
                     item.innerHTML = "Debe ingresar un mensaje mas largo (10 caracteres min)";
-                    nombre.classList.add("error");
+                    mensaje.classList.add("error");
                     sinError = false;
 
                 } else if (mensaje.value.length > 120) {
@@ -129,11 +149,16 @@
                     listaOk.appendChild(item);
                     item.innerHTML = " <b>Nombre:</b> " + nombre.value + " <b>Correo:</b> " + email.value + " <b>Mensaje: </b> " + mensaje.value + " <b>Telefono: </b> " + nrotel.value;
                     // en caso de que necesite vaciar seria-> mensaje.value == "";
-
+                nombre.value="";
+                email.value="";
+                mensaje.value="";
+                nrotel.value="";
                 }
                 return false;
+                
 
             }
+           
         </script>
     </body>
 </html>

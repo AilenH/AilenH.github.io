@@ -33,3 +33,9 @@ body{
     text-align: justify;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+embed{
+    width:"560";
+    height:"315";
+    
+}
