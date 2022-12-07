@@ -39,3 +39,15 @@ embed{
     height:"315";
     
 }
+footer{
+    justify-content: baseline;
+    background-color: rgb(127, 102, 157);
+    margin: 30px;
+}
+
+#copy{
+    float: right;
+}
+a{
+    text-decoration: none;
+}

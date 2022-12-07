@@ -99,3 +99,6 @@ footer{
 #copy{
     float: right;
 }
+a{
+    text-decoration: none;
+}
