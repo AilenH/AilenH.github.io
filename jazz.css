@@ -4,6 +4,10 @@
     box-sizing: border-box;
     list-style-type: none;
 }
+html{
+    font-family: 'Karla', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
 
 body{
     background-color: rgb(222, 186, 206);
@@ -30,9 +34,9 @@ body{
       
 }
 .texto{
+    
     text-align: justify;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
+    }
 
 embed{
     width:"560";
@@ -42,7 +46,8 @@ embed{
 footer{
     justify-content: baseline;
     background-color: rgb(127, 102, 157);
-    margin: 30px;
+    margin: 0;
+    width: 100%;
 }
 
 #copy{
@@ -50,4 +55,22 @@ footer{
 }
 a{
     text-decoration: none;
+}
+section{
+    display: flex;
+}
+
+.jazz{
+    justify-content: flex-start;
+    width: 65%;
+    height: 60%;
+}
+
+.videos{
+    justify-content: flex-end;
+    width: 40%;
+    height: auto;
+    margin: 0;
+    padding: 1px;
+
 }
